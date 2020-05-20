@@ -17,6 +17,10 @@
   }
 }
 
+.disabled {
+  cursor: not-allowed;
+}
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }

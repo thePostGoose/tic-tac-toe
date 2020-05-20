@@ -1,6 +1,9 @@
 .game {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
 
   &-info {
     margin-left: 1.25em;

@@ -1,34 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import classes from "./Board.module.scss";
 import Square from "../Square/Square";
 
-export default class Board extends Component {
-  renderSquare(i) {
-    return <Square value={i} />;
-  }
-
-  render() {
-    const status = "Next player: X";
-
-    return (
-      <div>
-        <div className={classes.status}>{status}</div>
-        <div className={classes["board-row"]}>
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className={classes["board-row"]}>
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className={classes["board-row"]}>
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
-      </div>
-    );
-  }
+function renderSquare(i, props) {
+  return (
+    <Square
+      value={props.squares[i]}
+      onClick={() => props.onClick(i)}
+      disabled={props.disabled}
+    />
+  );
 }
+
+const Board = (props) => {
+  return (
+    <div>
+      <div className={classes["board-row"]}>
+        {renderSquare(0, props)}
+        {renderSquare(1, props)}
+        {renderSquare(2, props)}
+      </div>
+      <div className={classes["board-row"]}>
+        {renderSquare(3, props)}
+        {renderSquare(4, props)}
+        {renderSquare(5, props)}
+      </div>
+      <div className={classes["board-row"]}>
+        {renderSquare(6, props)}
+        {renderSquare(7, props)}
+        {renderSquare(8, props)}
+      </div>
+    </div>
+  );
+};
+export default Board;

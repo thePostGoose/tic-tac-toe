@@ -1,22 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import classes from "./Square.module.scss";
 
-export default class Square extends Component {
-  state = {
-    value: null,
-  };
+const Square = (props) => {
+  const cls = [classes.square]
+  if (props.disabled) cls.push(classes.disabled)
+  return (
+    <button onClick={props.onClick} className={cls.join(' ')}>
+      {props.value}
+    </button>
+  );
+};
 
-  onClickHandler = () => {
-    this.setState({
-      value: "X",
-    });
-  };
-
-  render() {
-    return (
-      <button onClick={this.onClickHandler} className={classes.square}>
-        {this.state.value}
-      </button>
-    );
-  }
-}
+export default Square;
