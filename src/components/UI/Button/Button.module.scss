@@ -1,0 +1,18 @@
+@import "../../../variables.scss";
+
+.Button {
+  font-size: .6rem;
+  font-family: "Century Gothic", Futura, sans-serif;
+  outline: none;
+  border: 2px solid $border;
+  border-radius: 1em;
+  padding: .125em .7em;
+  cursor: pointer;
+  color: $border;
+  background: linear-gradient(45deg, darken($bgc, 10%) 0%, lighten($text, 20%) 30%, darken($bgc, 10%) 60%, lighten($text, 20%) 100%);
+  &:hover{
+    border: 2px solid $coor;
+    background: linear-gradient(45deg, darken($bgc, 5%) 0%, lighten($text, 25%) 30%, darken($bgc, 5%) 60%, lighten($text, 25%) 100%);
+    color: $coor;
+  }
+}

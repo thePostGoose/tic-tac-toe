@@ -1,0 +1,13 @@
+@import "../../../variables.scss";
+.game-info {
+  color: $text;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: stretch;
+  margin-top: 5em;
+}
+.status {
+  margin-bottom: .725em;
+}

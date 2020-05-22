@@ -1,0 +1,16 @@
+@import "../../../variables.scss";
+
+.field {
+  border: 3px solid $border;
+  margin-left: 3em;
+  margin-top: 5em;
+  align-self: flex-start;
+  @media (max-width: $mediaPoint) {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+
+.row {
+  display: flex;
+}

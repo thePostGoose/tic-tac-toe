@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.GameLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  margin: 0 auto;
+  @media (max-width: $mediaPoint)  {
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 5em;
+  }
+}
