@@ -17,7 +17,10 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      return {
+        winnerChar: squares[a],
+        winnerLine: [a, b, c],
+      };
     }
   }
   return null;
@@ -73,12 +76,13 @@ export default class GameLayout extends Component {
   }
 
   render() {
+
+
     return (
       <div className={classes.GameLayout}>
         <GameField
           onClick={(i) => this.handleClickSquare(i)}
           winner={this.state.winner}
-          disabled={this.state.disabled}
           history={this.state.history}
           stepNumber={this.state.stepNumber}
           xIsNext={this.state.xIsNext}
@@ -88,6 +92,7 @@ export default class GameLayout extends Component {
           winner={this.state.winner}
           history={this.state.history}
           xIsNext={this.state.xIsNext}
+          stepNumber={this.state.stepNumber}
         />
       </div>
     );

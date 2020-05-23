@@ -1,0 +1,71 @@
+@import '../../../variables.scss';
+
+.active {
+  position: relative;
+
+  &::before {
+    opacity: 1;
+    position: absolute;
+    top: -15%;
+    content: '\22B3';
+    left: -.7em;
+    color: $coor;
+    animation: fade .5s ease;
+  }
+  
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    left: -1.7em;
+  }
+
+  to {
+    opacity: 1;
+    left: -.7em;
+  }
+}
+
+.non-active {
+  position: relative;
+
+  &::before {
+    top: -15%;
+    opacity: 0;
+    position: absolute;
+    content: '\22B3';
+    left: -1.7em;
+    color: $coor;
+    animation: fade-out .5s ease;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    left: -.7em;
+  }
+
+  to {
+    opacity: 0;
+    left: -1.7em;
+  }
+}
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.coors-wrapper {
+  display: inline-block;
+  text-align: right;
+  width: 5em;
+}
+
+.coors-colorizer {
+  color: $coor;
+}

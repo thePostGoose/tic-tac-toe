@@ -6,9 +6,10 @@
   justify-content: space-between;
   height: 100vh;
   margin: 0 auto;
+  padding-top: 3em;
+  max-width: 90%;
   @media (max-width: $mediaPoint)  {
     flex-direction: column;
     justify-content: space-around;
-    padding-top: 5em;
   }
 }

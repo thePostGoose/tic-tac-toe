@@ -26,3 +26,7 @@
 .kbd-navigation .square:focus {
   background: $bgc;
 }
+
+.winner-line {
+  background-color: lighten($text, 20%);
+}

@@ -7,7 +7,7 @@ import classes from "./MovesHistory.module.scss";
 const MovesHistory = (props) => {
   return (
     <div className={classes["moves-history"]}>
-      <p>
+      <p className={classes['item-container']}>
         В начало <Button onClick={() => props.onClick(0)}>перейти</Button>
       </p>
       <ul>
@@ -18,6 +18,7 @@ const MovesHistory = (props) => {
               onClick={props.onClick}
               key={move}
               step={step}
+              stepNumber={props.stepNumber}
             />
           );
         })}

@@ -7,6 +7,7 @@
   border: 2px solid $border;
   border-radius: 1em;
   padding: .125em .7em;
+  align-self: center;
   cursor: pointer;
   color: $border;
   background: linear-gradient(45deg, darken($bgc, 10%) 0%, lighten($text, 20%) 30%, darken($bgc, 10%) 60%, lighten($text, 20%) 100%);

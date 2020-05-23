@@ -3,7 +3,7 @@ import classes from "./GameField.module.scss";
 
 import Square from "../../Square/Square";
 
-function renderField(width, hight, { history, stepNumber, onClick }) {
+function renderField(width, hight, { history, stepNumber, onClick, winner }) {
   function createRow(i) {
     return (
       <div key={i} className={classes.row}>
@@ -11,13 +11,21 @@ function renderField(width, hight, { history, stepNumber, onClick }) {
           .fill("")
           .map((_, index) => {
             let arg = i * width + index;
-            return (
-              <Square
-                key={arg}
-                value={history[stepNumber].squares[arg]}
-                onClick={() => onClick(arg)}
-              />
-            );
+            let stayOnWinnerLine = null;
+            if (winner){
+              for (let entry of winner.winnerLine) {
+                if (arg === entry) stayOnWinnerLine = true;
+              }
+            }
+              return (
+                <Square
+                  key={arg}
+                  value={history[stepNumber].squares[arg]}
+                  onClick={() => onClick(arg)}
+                  winner={winner}
+                  stayOnWinnerLine={stayOnWinnerLine}
+                />
+              );
           })}
       </div>
     );

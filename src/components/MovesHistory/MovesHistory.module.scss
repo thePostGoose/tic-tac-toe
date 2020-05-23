@@ -1,4 +1,11 @@
 .moves-history{
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  width: 80%;
+}
+.item-container{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 2em;
 }
