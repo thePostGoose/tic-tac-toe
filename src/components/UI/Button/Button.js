@@ -1,12 +1,12 @@
 import React from "react";
 import classes from "./Button.module.scss";
 
-const Button = (props) => {
+const Button = ({type, children, onClick}) => {
   const cls = [classes.Button];
-  if (props.type) cls.push(classes[props.type]);
+  if (type) cls.push(classes[type]);
   return (
-    <button className={cls.join(" ")} onClick={props.onClick}>
-      {props.children}
+    <button className={cls.join(" ")} onClick={onClick}>
+      {children}
     </button>
   );
 };

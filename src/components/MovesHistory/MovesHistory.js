@@ -4,21 +4,21 @@ import Button from "../UI/Button/Button";
 import classes from "./MovesHistory.module.scss";
 
 
-const MovesHistory = (props) => {
+const MovesHistory = ({onClick, stepNumber, history}) => {
   return (
     <div className={classes["moves-history"]}>
       <p className={classes['item-container']}>
-        В начало <Button onClick={() => props.onClick(0)}>перейти</Button>
+        В начало <Button onClick={() => onClick(0)}>перейти</Button>
       </p>
       <ul>
-        {props.history.slice(1).map((step, move) => {
+        {history.slice(1).map((step, move) => {
           return (
             <MovesHistoryItem
               move={move}
-              onClick={props.onClick}
+              onClick={onClick}
               key={move}
               step={step}
-              stepNumber={props.stepNumber}
+              stepNumber={stepNumber}
             />
           );
         })}

@@ -3,18 +3,18 @@ import MovesHistory from "../../MovesHistory/MovesHistory";
 import classes from "./GameInfo.module.scss";
 import GameStatus from "../../GameStatus/GameStatus";
 
-const GameInfo = (props) => {
+const GameInfo = ({stepNumber, winner, xIsNext, history, onClick}) => {
   return (
     <div className={classes["game-info"]}>
       <GameStatus
-        stepNumber={props.stepNumber}
-        winner={props.winner}
-        xIsNext={props.xIsNext}
+        stepNumber={stepNumber}
+        winner={winner}
+        xIsNext={xIsNext}
       />
       <MovesHistory
-        stepNumber={props.stepNumber}
-        history={props.history}
-        onClick={props.onClick}
+        stepNumber={stepNumber}
+        history={history}
+        onClick={onClick}
       />
     </div>
   );
